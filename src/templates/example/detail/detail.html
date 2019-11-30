@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="UTF-8">
+  <title>{{songDetail.name}}-{{songDetail.ar[0].name}}</title>
+</head>
+<body>
+{% include "components/header/header.html" %}
+
+<main class="detail-page">
+  <div class="song-bg" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url({{songDetail.al.picUrl}}) no-repeat center center/ cover;">
+    <section class="content">
+      <h1>{{songDetail.name}}</h1>
+      <h2>{{songDetail.ar[0].name}}</h2>
+      <audio class="my-2" src="https://music.163.com/song/media/outer/url?id={{songDetail.id}}.mp3" controls="controls"></audio>
+    </section>
+  </div>
+</main>
+</body>
+</html>

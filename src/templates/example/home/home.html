@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="UTF-8">
+  <title>山寨音乐</title>
+</head>
+<body>
+
+{% include "components/header/header.html" %}
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">山寨音乐</h1>
+      <p class="lead text-muted">一个使用egg+webpack4结合开发的多页面脚手架demo，包含HMR、es6、sass、vue、tree-shaking、lint-staged等特性，支持通过配置的方式来构建项目，项目结构简单实用。</p>
+      <p>
+        <a href="#" class="btn btn-primary my-2">Main call to action</a>
+        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        {% for item in songList %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="http://p1.music.126.net/HeGrAKPiZhKkONiFDxZvmw==/109951164384346866.jpg"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <a href="/detail/{{item.song.id}}"><img src="{{item.song.album.picUrl}}?param=500y333" style="width: 100%;height: 225px;" alt=""></a>
+            <div class="card-body">
+              <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+              <div class="d-flex justify-content-between align-items-center">
+                <span>{{item.song.name}}</span>
+                <small class="text-muted">{{item.song.artists[0].name}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+{% include "components/footer/footer.html" %}
+
+</body>
+</html>

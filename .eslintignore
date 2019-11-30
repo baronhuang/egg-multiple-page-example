@@ -1,0 +1,8 @@
+node_modules
+test
+static
+logs
+src/libs
+temp
+dist
+run

@@ -1,0 +1,16 @@
+
+html, body {
+  height:100%;
+}
+.detail-page {
+  height: inherit;
+  margin-top: -56px;
+  .song-bg {
+    height: 100%;
+  }
+  .content {
+    padding-top: 200px;
+    color: #fff;
+    text-align: center;
+  }
+}
